@@ -77,3 +77,134 @@ obj.display()
     
     
     
+#Inheritence
+#1.Single Level inheritence
+class Parent:
+    def pdisplay(self):
+        print("This is parent property!!")
+        
+class Child(Parent):
+    def cdisplay(self):
+        print("This is child property!!")
+        
+c = Child()
+c.cdisplay()
+c.pdisplay()
+
+print("------------------------")
+#2.Multi-level Inheritence
+class GrandParent:
+    def gpdisplay(self):
+        print("This is gp property!!")
+        
+class Parent(GrandParent):
+    def pdisplay(self):
+        print("This is parent property")
+        
+class Child(Parent):
+    def cdisplay(self):
+        print("This is c property")
+    
+c = Child()
+c.cdisplay()
+c.pdisplay()
+c.gpdisplay()
+
+print("-------------------")
+
+#Multiple inheritence
+class Father:
+    def fdisplay(self):
+        print("This is father display")
+class Mother:
+    def mdisplay(self):
+        print("This is mother display")
+class Child(Father,Mother):
+    def cdisplay(self):
+        print("This is child display")
+        
+c = Child()
+c.mdisplay()
+c.fdisplay()
+print("-----------")
+#4.Hybrid inheritence
+class Parent(GrandParent):
+    def pdisplay(self):
+        print("This is parent property")
+        
+class Child1(Parent):
+    def cdisplay(self):
+        print("This is c property")
+
+class Child2(Parent):
+    def cdisplay(self):
+        print("This is c property")
+
+class Child3(Parent):
+    def cdisplay(self):
+        print("This is c property")
+        
+c1 = Child1()
+c1.pdisplay()
+c2 = Child2()
+c2.pdisplay()
+
+#Abstract: "Hidding the implementation details by showing essential details"
+#explame: Installation of softwares(vs code)
+from abc import ABC,abstractmethod
+class AbstClass(ABC):
+    @abstractmethod
+    def absfunc(self):
+        pass
+class ConcreteClass(AbstClass):
+    def absfunc(self):
+        print("This is abstract method-defined")
+#NOTE: We cant create object for abstract class
+obj = ConcreteClass()
+obj.absfunc()
+
+#Polymorphism:"Implementing same thing in a differnt way"
+#we can acheive using Overloading and Overrinding
+#1.Overloading
+'''
+a.Operator Overloading
+b.Method Overloading
+'''
+#a.operator overloading
+a = 10
+b = 30
+print(a+b)#30(addition - + operator act as addition wrt Integers)
+a = "hi"
+b = "hello"
+print(a+b)#hihello (+ operator act as concationation wrt strings)
+
+print(10*20)#multiplication
+l = [1,2,3]
+print(l*3)#[1, 2, 3, 1, 2, 3, 1, 2, 3] replication wrt python datastructures
+
+#b.method overloading
+def add():
+    a = 10
+    b = 20
+    print(a+b)
+add()
+
+def add(a,b):
+    print(a+b)
+add(10,40)
+
+def add(a,b,c):
+    print(a+b+c)
+add(10,20,30)
+
+#Overriding
+class Parent:
+    def display(self):
+        print("This is parent property")
+
+class Child(Parent):
+    def display(self):
+        super().display()
+        print("This is child property")
+c = Child()
+c.display()
