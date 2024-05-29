@@ -124,3 +124,5 @@ print("The name is {1} and age is {0}".format(age,name))
 
 a,b= input("Enter two number").split()
 print(int(a) + int(b))
+
+print("done")
