@@ -50,6 +50,47 @@ def editdb():
 def delete(id):
     cursor.execute('''DELETE FROM employees WHERE empid=?''',(id,)) 
     conn.commit()
-    return redirect("/")    
+    return redirect("/")
+
+
+@app.route("/signup")
+def signup():
+    return render_template('signup.html')
+
+
+@app.route("/signupdb", methods=['GET','POST'])
+def signupdb():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        # print([username,password])
+        cursor.execute('''INSERT INTO registration(username,password) VALUES(?,?)''',(username,password))
+        conn.commit()
+        print("Registration successfully!")
+        return redirect("/login")
+
+@app.route("/login")
+def login():
+    return render_template('login.html')
+
+@app.route("/logindb",methods=['GET','POST'])
+def logindb():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        repassword = request.form['repassword']
+        # print([username,password,repassword])
+        if password == repassword:
+            res = cursor.execute('''SELECT password from registration WHERE username=?''',(username,))
+            res = res.fetchone()
+            # print("password from db ",res[0])
+            if res[0] == password:
+                return redirect("/")
+            else:
+                return "passord is incorrect!!!"
+        else:
+            return "password is not matching!!"
+            
+    
 if __name__=='__main__':
     app.run(debug=True)

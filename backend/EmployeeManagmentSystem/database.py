@@ -12,6 +12,9 @@ cursor = conn.cursor()
 cursor.execute('''CREATE TABLE IF NOT EXISTS employees(empid INTEGER PRIMARY KEY,empname TEXT,empdesignation TEXT)''')
 print("Employee Table created successfully!")
 
+cursor.execute('''CREATE TABLE IF NOT EXISTS registration(username TEXT PRIMARY KEY,password TEXT)''')
+print("Registration Table created successfully!")
+
 # #insert data 
 # cursor.execute('''INSERT INTO employees(empid,empname,empdesignation) VALUES(?,?,?)''',(102,'Zuhain','Software Tester'))
 # conn.commit()
