@@ -67,5 +67,72 @@ print(myones)
 myarr = np.random.random((3,3))
 print(myarr)
 
-#Random 
-print(np.arange(1,10,6))
+
+myvar = np.random.random()
+print("this is my random number:   ",myvar)
+
+if np.random.random() > 0.5:
+    print("you won")
+else:
+    print("game end")
+    
+    
+#reshape
+
+#shape: size of matrix (row,column)
+
+l = [[1,2,3],
+     [4,5,6],
+     [9,10,11]]
+arr = np.array(l)
+print(arr.shape)
+
+
+randomarr = np.random.random((4,3))
+print(randomarr)
+
+newarr = np.reshape(randomarr,(3,4))
+print(newarr)
+l = [[1,2,3,22],
+     [4,5,6,33],
+     [9,10,11,44]]
+arr = np.array(l)
+newarr2 = np.reshape(arr,(4,3))
+print(newarr2)
+
+
+#Arithematic operation
+arr = np.array([1,2,3,4,5,6])
+print(arr + 1)
+print(arr * 10)
+print(arr - 1)
+print(arr ** 2)
+
+
+
+arr = np.array([13,2,3,48,52,6])
+print(arr.min())
+print(arr.max())
+
+#imp
+arr = np.array([[9,2,3],
+                [4,6,8],
+                [7,5,1]])
+
+#output: [9,6,8]
+print(arr.max(axis=0)) #axis = 0 is to find maximum in column wise, if axis=1(row wise)
+print(arr.max(axis=1)) #max in row wise
+
+
+
+#sorting
+arr = np.array([[7,3,8,6,4],[7,2,9,8,6],[5,4,2,3,1]])
+
+print(arr.ndim)
+
+#sorting the above array
+arr = np.sort(arr,axis=0,kind="mergesort")
+print(arr)
+arr = np.sort(arr,axis=1,kind="mergesort")
+print(arr)
+
