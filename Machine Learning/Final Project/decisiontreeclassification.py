@@ -1,0 +1,26 @@
+from sklearn.tree import DecisionTreeClassifier
+# from sklearn import tree
+# model = tree.DecisionTreeClassifier()
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+import pandas as pd
+
+
+df = pd.read_csv('data.csv')
+# print(df)
+x = df.iloc[:,:-1]
+y = df.iloc[:,-1]
+
+x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.2,random_state=6)
+
+
+model = DecisionTreeClassifier()
+model.fit(x_train,y_train)
+
+pred = model.predict([[151,88,74,647,101]])
+print(pred)
+
+
+y_pred = model.predict(x_test)
+acc_scrore = accuracy_score(y_pred,y_test)
+print(acc_scrore * 100)

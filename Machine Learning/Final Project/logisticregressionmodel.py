@@ -71,3 +71,5 @@ y_pred = model.predict(x_test)
 #To find accuracy of the model
 acc_score = accuracy_score(y_pred,y_test)
 print(round(acc_score * 100))
+
+#confusion matrix
