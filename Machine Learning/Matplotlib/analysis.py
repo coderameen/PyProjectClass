@@ -33,11 +33,47 @@ plt.show()
 '''
 
 
-#Scatter Plot
-x = [1,2,3,4,5,6,7,8,9,10]
-y = [2,3,4,5,7,6,6,8,9,9]
-plt.scatter(x,y,color="orange",marker="*")
-plt.xlabel('x-axis')
-plt.ylabel('y-axis')
-plt.title('Scatter Plot')
+# #Scatter Plot
+# x = [1,2,3,4,5,6,7,8,9,10]
+# y = [2,3,4,5,7,6,6,8,9,9]
+# plt.scatter(x,y,color="orange",marker="*")
+# plt.xlabel('x-axis')
+# plt.ylabel('y-axis')
+# plt.title('Scatter Plot')
+# plt.show()
+
+
+
+
+#Histogram
+'''
+percentages = [25,5,45,66,78,43,34,89,12,34,56,78,90,95,98,69]
+range =  (0,100)
+num = 10 #total bars
+
+plt.hist(percentages,num,range,color="orange", histtype='bar',rwidth=0.5)
 plt.show()
+
+'''
+
+#Plot the data graph from CSV(Dataset)
+import csv
+
+x = []
+y = []
+
+with open('pizza2.csv','r') as file:
+    df = csv.reader(file)
+    for col in df:
+        # print(col[0])
+        x.append(col[0])
+        y.append(col[2])
+        # print(col[0])
+        
+        
+    
+# plt.plot(x,y,label="Analyse",color="orange")
+# plt.show()
+
+# plt.scatter(x,y,label="Age vs Eat_PiZZA", color="orange", marker="*")
+# plt.show()
