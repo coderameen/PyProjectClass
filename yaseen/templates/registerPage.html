@@ -8,44 +8,27 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Login Page</title>
+    <title>Register Page</title>
   </head>
-  <body style="background-color: rgb(166, 205, 223);">
+  <body>
 
         <div class="container">
             <center>
-                <h1 class="display-4">Login Form </h1>
+                <h1>Register Form </h1>
 
-                <form action="{{ url_for('logindb') }}" method="post">
+                <form action="{{ url_for('registerdb') }}" method="post">
                     <label for="">username</label> <input type="text" placeholder="Enter Username" name="usernameinp" class="form-control" style="width: 35%;" required>
                     <br>
                     <br>
                     <label for="">password</label> <input type="password" placeholder="Enter Password" name="passwordinp" class="form-control" style="width: 35%;">
                     <br>
                     <br>
-                    <input type="submit" value="Login" class="btn btn-success">
+                    <input type="submit" value="Register" class="btn btn-success">
                 </form>
-
-                <p>Don't have an account? <a href="/register">Signup</a></p>
+                <p>Already have an account? <a href="/login">login</a></p>
             </center>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-    
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <div>
-              <h5 class="lead" style="color:blue"><center>Designed with &#128151; by Yaseen | Sarita | Navneeth</center></h5>
-            </div>
+            
         </div>
-        
 
     <!-- Optional JavaScript; choose one of the two! -->
 

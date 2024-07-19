@@ -10,29 +10,56 @@
 
     <title>RPMS</title>
   </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">RPMS</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/predictpage">Predict</a>
-              </li>
-             
-              
-            </ul>
-          </div>
+  <body style="background-color: rgb(172, 252, 252);">
+    <nav class="navbar navbar-expand-lg navbar-light " style="border: 5px groove orange; border-radius: 25px;background-color: rgb(153, 181, 237);">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">REMOTE PATIENT MONITORING SYSTEM 🩺 </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/predictpage"> Covid Predict</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/diabetesPage">Diabetes Prediction</a>
+            </li>
+         
+            <li class="nav-item">
+              <a class="nav-link" href="/heartPage">Heart Prediction</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/ourteam">About Us</a>
+            </li>
+
+           
+            
+          </ul>
         </div>
-      </nav>
+      </div>
+    </nav>
   <center>
-    <h1>Predict</h1>
+    <h1 class="display-5">COVID PREDICTION</h1>
+    <div class="row">
+      <div class="col-md-4">
+      
+      </div>
+      <div class="col-md-4">
+        <img src="https://www.statnews.com/wp-content/uploads/2020/03/AdobeStock_281945725.jpg" alt="" class="img-fluid">
+
+        <h6 class="text-center">
+          Smart Monitoring for a Smarter Planet
+        </h6>
+      </div>
+      <div class="col-md-4">
+      
+      </div>
+        </div>
+    
     <form action="/predict" method="post">
       <label>Blood Pressure</label> <input type="text" placeholder="Enter Blood Pressure" name="bpinp" class="form-control" style="width: 30%;" required>
       <br>
@@ -52,7 +79,25 @@
 
       <input type="submit" value="Predict" class="btn btn-success">
     </form>
-    
+    <div>
+      <h4 class="text-right">Sample Examples for diabetes:</h4>
+      <table class="table table-info">
+          <thead>
+              <tr>
+        
+                  <th>Pregnancies</th><th>Glucose</th><th>BloodPressure</th><th>SkinThickness</th><th>Insulin</th><th>BMI</th><th>DiabetesPedigreeFunction</th><th>Age</th><th>Outcome</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>8</td><td>176</td><td>90</td><td>34</td><td>300</td><td>33.7</td><td>0.467</td><td>58</td><td>Have Diabetes</td>
+              </tr>
+              <tr>
+                  <td>7</td><td>150</td><td>66</td><td>42</td><td>342</td><td>34.7</td><td>0.718</td><td>42</td><td>Don't Diabetes</td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
   </center>
 
     <!-- Optional JavaScript; choose one of the two! -->

@@ -6,8 +6,7 @@ from database import conn,cursor
 app = Flask(__name__)
 
 model = pickle.load(open('model.pkl','rb'))
-heart_model = pickle.load(open('heart_model.pkl','rb'))
-diabetes_model = pickle.load(open('diabetes_model.pkl','rb'))
+
 
 
 @app.route("/")
@@ -86,81 +85,6 @@ def predict():
             msg = "Patient Health is Severe"
         
         return render_template('index.html', msg=msg)
-    
-    
-@app.route("/heartPage")
-def heartPage():
-    return render_template('heartPage.html')
-
-
-#POST API
-@app.route("/heart_predict", methods=['GET','POST'])
-def heart_predict():
-    if request.method == 'POST':
-        #independent parameters
-
-        age = request.form['age']
-        sex = request.form['sex']
-        cp = request.form['cp']
-        trestbps = request.form['trestbps']
-        chol = request.form['chol']
-        fbs = request.form['fbs']
-        restecg = request.form['restecg']
-        thalach = request.form['thalach']
-        exang = request.form['exang']
-        oldpeak = request.form['oldpeak']
-        slope = request.form['slope']
-        ca = request.form['ca']
-        thal = request.form['thal']
-        
-     
-        
-        # print([bp,oxy,hb,ecg,temp])
-        pred = heart_model.predict([[age,sex,cp,trestbps,chol,fbs,restecg,thalach,exang,oldpeak,slope,ca,thal]])
-        # print(pred[0])
-        
-        if pred[0] == 0:
-            msg = "The Patient have Heart Disease!!"
-        elif pred[0] == 1:
-            msg = "The Patient Doesn't have heart Disease!!"
-        
-        return render_template('index.html', msg=msg)
-    
-    
-@app.route("/diabetesPage")
-def diabetesPage():
-    return render_template('diabetesPage.html')
-
-@app.route("/diabetes_predict", methods=['GET','POST'])
-def diabetes_predict():
-    if request.method == 'POST':
-        #independent parameters
-        Pregnancies = request.form['Pregnancies']
-        Glucose = request.form['Glucose']
-        BloodPressure = request.form['BloodPressure']
-        SkinThickness = request.form['SkinThickness']
-        Insulin = request.form['Insulin']
-        BMI = request.form['BMI']
-        DiabetesPedigreeFunction = request.form['DiabetesPedigreeFunction']
-        Age = request.form['Age']
-     
-        
-     
-        
-        # print([bp,oxy,hb,ecg,temp])
-        pred = diabetes_model.predict([[Pregnancies,Glucose,BloodPressure,SkinThickness,Insulin,BMI,DiabetesPedigreeFunction,Age]])
-        # print(pred[0])
-        
-        if pred[0] == 0:
-            msg = "The Patient have Diabetes Disease!!"
-        elif pred[0] == 1:
-            msg = "The Patient Doesn't have Diabetes Disease!!"
-        
-        return render_template('index.html', msg=msg)
-    
-@app.route("/ourteam")
-def ourteam():
-    return render_template("ourteam.html")
         
 if __name__=='__main__':
     app.run(debug=True, port=5001)

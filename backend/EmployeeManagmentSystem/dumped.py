@@ -3,7 +3,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 import pandas as pd
 import pickle
-# breakpoint()
 # from sklearn.naive_bayes import GaussianNB
 df = pd.read_csv('data.csv')
 # print(df)
